@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-ArchLinux -教程," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写在前面Archlinux官方有着完整的中文Wiki，因此，这种教程大概是没什么必要的，但是如果你只想按照步骤一步步装完，而不想跟着官方链接跳来跳去的话，那么这篇文章还有那么点存在的价值。 教程开始官方中文Wiki链接:点此跳转)前期从分区到安装官方都有详尽的说明及命令，不再赘述。由于官方从安装引导程序处开始放各种链接，因此本教程从此处开始。另外，安装过程中可能由于地区问题影响下载速度，因此，这里">
+<meta name="keywords" content="-ArchLinux -教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Archlinux安装教程">
+<meta property="og:url" content="http://yoursite.com/2017/01/19/ArchLinux安装教程/index.html">
+<meta property="og:site_name" content="清风楼">
+<meta property="og:description" content="写在前面Archlinux官方有着完整的中文Wiki，因此，这种教程大概是没什么必要的，但是如果你只想按照步骤一步步装完，而不想跟着官方链接跳来跳去的话，那么这篇文章还有那么点存在的价值。 教程开始官方中文Wiki链接:点此跳转)前期从分区到安装官方都有详尽的说明及命令，不再赘述。由于官方从安装引导程序处开始放各种链接，因此本教程从此处开始。另外，安装过程中可能由于地区问题影响下载速度，因此，这里">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-07T13:13:16.700Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Archlinux安装教程">
+<meta name="twitter:description" content="写在前面Archlinux官方有着完整的中文Wiki，因此，这种教程大概是没什么必要的，但是如果你只想按照步骤一步步装完，而不想跟着官方链接跳来跳去的话，那么这篇文章还有那么点存在的价值。 教程开始官方中文Wiki链接:点此跳转)前期从分区到安装官方都有详尽的说明及命令，不再赘述。由于官方从安装引导程序处开始放各种链接，因此本教程从此处开始。另外，安装过程中可能由于地区问题影响下载速度，因此，这里">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/19/ArchLinux安装教程/"/>
+
+
+
+
+
+  <title>Archlinux安装教程 | 清风楼</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清风楼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/19/ArchLinux安装教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sherry">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清风楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Archlinux安装教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-19T17:33:16+08:00">
+                2017-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>Archlinux官方有着完整的中文Wiki，因此，这种教程大概是没什么必要的，但是如果你只想按照步骤一步步装完，而不想跟着官方链接跳来跳去的话，那么这篇文章还有那么点存在的价值。</p>
+<h3 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h3><p>官方中文Wiki链接:<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="external">点此跳转</a>)<br>前期从分区到安装官方都有详尽的说明及命令，不再赘述。由于官方从安装引导程序处开始放各种链接，因此本教程从此处开始。<br>另外，安装过程中可能由于地区问题影响下载速度，因此，这里建议使用清华、浙大的源：<br><a id="more"></a><br>执行以下命令，用Vim来编辑/etc/pacman.d/mirrorlist这个文件</p>
+<blockquote>
+<p>vim /etc/pacman.d/mirrorlist</p>
+</blockquote>
+<p>找到标有 China 的的镜像源，添加两条记录：</p>
+<blockquote>
+<p>Server = <a href="http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch" target="_blank" rel="external">http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</a><br>  Server = <a href="http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch" target="_blank" rel="external">http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch</a></p>
+</blockquote>
+<h4 id="安装引导程序"><a href="#安装引导程序" class="headerlink" title="安装引导程序"></a>安装引导程序</h4><p>如果是Intel CPU，在终端执行下列命令</p>
+<blockquote>
+<p>pacman -S intel-ucode</p>
+</blockquote>
+<p>安装Bootloader，这里我们安装最流行的Grub2。首先安装os-prober这个包，它可以配合Grub检测已经存在的系统，自动设置启动选项。</p>
+<blockquote>
+<p>pacman -S os-prober</p>
+</blockquote>
+<p>如果为BIOS/MBR引导方式：</p>
+<ol>
+<li><p>安装grub包：</p>
+<blockquote>
+<p>pacman -S grub</p>
+</blockquote>
+</li>
+<li><p>部署grub：</p>
+<blockquote>
+<p>grub-install –target=i386-pc /dev/sdx</p>
+</blockquote>
+</li>
+</ol>
+<p>注意这里的sdx应该为硬盘（例如/dev/sda），而不是形如/dev/sda1这样的分区。</p>
+<ol>
+<li>生成配置文件：<blockquote>
+<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
+</blockquote>
+</li>
+</ol>
+<p>如果报warning failed to connect to lvmetad，falling back to device scanning.错误。简单的方法是编辑/etc/lvm/lvm.conf这个文件，找到use_lvmetad = 1将1修改为0，保存，重新配置grub。</p>
+<p>如果为EFI/GPT引导方式：</p>
+<ol>
+<li><p>安装grub与efibootmgr两个包：</p>
+<blockquote>
+<p>pacman -S grub efibootmgr</p>
+</blockquote>
+</li>
+<li><p>部署grub：</p>
+<blockquote>
+<p>grub-install –target=x86_64-efi –efi-directory=/boot –bootloader-id=grub</p>
+</blockquote>
+</li>
+<li><p>生成配置文件：</p>
+<blockquote>
+<p>grub-mkconfig -o /boot/grub/grub.cfg</p>
+</blockquote>
+</li>
+</ol>
+<p>如果报warning failed to connect to lvmetad，falling back to device scanning.错误。简单的方法是编辑/etc/lvm/lvm.conf这个文件，找到use_lvmetad = 1将1修改为0，保存，重新配置grub。</p>
+<h4 id="安装后检查"><a href="#安装后检查" class="headerlink" title="安装后检查"></a>安装后检查</h4><p>强烈建议使用如下命令检查是否成功生成各系统的入口，如果没有正常生成会出现开机没有系统入口的情况：</p>
+<blockquote>
+<p>vim /boot/grub/grub.cfg</p>
+</blockquote>
+<p>检查接近末尾的menuentry部分是否有Archlinux入口，若不存在，请先检查/boot目录是否正确部署linux内核：</p>
+<blockquote>
+<p>cd /boot<br>  ls</p>
+</blockquote>
+<p>  查看是否有initramfs-linux-fallback.img initramfs-linux.img intel-ucode.img vmlinuz-linux这几个文件，如果都没有，说明linux内核没有被正确部署，很有可能是/boot目录没有被正确挂载导致的，确认/boot目录无误后，可以重新部署linux内核：</p>
+<blockquote>
+<p>pacman -S linux</p>
+</blockquote>
+<p>再重新生成配置文件，就可以找到系统入口。</p>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><p>接下来，你需要进行重启来启动已经安装好的系统，执行如下命令：</p>
+<blockquote>
+<p>exit<br>  reboot</p>
+</blockquote>
+<p>至此，Archlinux就安装完毕了，如若需要安装和配置图形界面，请看下一篇文章。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ArchLinux-教程/" rel="tag"># -ArchLinux -教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/03/Windows下优秀软件收录/" rel="next" title="Windows下优秀软件收录">
+                <i class="fa fa-chevron-left"></i> Windows下优秀软件收录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/20/Archlinux图形界面的配置和安装/" rel="prev" title="ArchLinux图形界面的配置和安装">
+                ArchLinux图形界面的配置和安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">sherry</p>
+              <p class="site-description motion-element" itemprop="description">Be an interesting person :)</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程开始"><span class="nav-number">2.</span> <span class="nav-text">教程开始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装引导程序"><span class="nav-number">2.1.</span> <span class="nav-text">安装引导程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装后检查"><span class="nav-number">2.2.</span> <span class="nav-text">安装后检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启"><span class="nav-number">2.3.</span> <span class="nav-text">重启</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sherry</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
