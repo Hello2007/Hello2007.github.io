@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="linux,Window," />
+  <meta name="keywords" content="MPlayer,linux," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言主力系统一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，又感觉Arch小巧也不错。考虑再三还是选择了Win10… Win10推出这么久了，想必稳定性大概也不错了。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)既然如此，那果断要来体验一把！ 教程根据官方的Gui">
-<meta name="keywords" content="linux,Window">
+<meta name="description" content="前言本教程基本来自官方文档，建议有基础的还是去看官方，也就是README文件.官方建议自己编译，不建议从第三方库中直接安装。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer。 编译之前编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得. Source Code没什么好说的，选择最新的就行。">
+<meta name="keywords" content="MPlayer,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win10内置Linux子系统初体验">
-<meta property="og:url" content="http://yoursite.com/2017/08/29/Win10内置Linux子系统初体验/index.html">
+<meta property="og:title" content="Linux下MPlayer编译教程">
+<meta property="og:url" content="http://yoursite.com/2017/11/08/Mplayer编译教程/index.html">
 <meta property="og:site_name" content="清风楼">
-<meta property="og:description" content="前言主力系统一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，又感觉Arch小巧也不错。考虑再三还是选择了Win10… Win10推出这么久了，想必稳定性大概也不错了。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)既然如此，那果断要来体验一把！ 教程根据官方的Gui">
+<meta property="og:description" content="前言本教程基本来自官方文档，建议有基础的还是去看官方，也就是README文件.官方建议自己编译，不建议从第三方库中直接安装。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer。 编译之前编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得. Source Code没什么好说的，选择最新的就行。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-08T02:23:58.613Z">
+<meta property="og:updated_time" content="2017-11-08T03:22:43.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Win10内置Linux子系统初体验">
-<meta name="twitter:description" content="前言主力系统一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，又感觉Arch小巧也不错。考虑再三还是选择了Win10… Win10推出这么久了，想必稳定性大概也不错了。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)既然如此，那果断要来体验一把！ 教程根据官方的Gui">
+<meta name="twitter:title" content="Linux下MPlayer编译教程">
+<meta name="twitter:description" content="前言本教程基本来自官方文档，建议有基础的还是去看官方，也就是README文件.官方建议自己编译，不建议从第三方库中直接安装。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer。 编译之前编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在官方网站获得. Source Code没什么好说的，选择最新的就行。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/29/Win10内置Linux子系统初体验/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/08/Mplayer编译教程/"/>
 
 
 
 
 
-  <title>Win10内置Linux子系统初体验 | 清风楼</title>
+  <title>Linux下MPlayer编译教程 | 清风楼</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/Win10内置Linux子系统初体验/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/Mplayer编译教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sherry">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Win10内置Linux子系统初体验</h1>
+          <h1 class="post-title" itemprop="name headline">Linux下MPlayer编译教程</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T15:29:56+08:00">
-                2017-08-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T10:14:00+08:00">
+                2017-11-08
               </time>
             
 
@@ -342,23 +342,39 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主力系统一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，又感觉Arch小巧也不错。考虑再三还是选择了Win10…</p>
-<p>Win10推出这么久了，想必稳定性大概也不错了。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)<br>既然如此，那果断要来体验一把！</p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><p>根据官方的<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">Guide</a>，首先要查看系统的OS版本号和系统类型。<br>系统类型必须是64位操作系统以及OS版本号要在1607+。<br>查看方法：</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本教程基本来自官方文档，建议有基础的还是去看官方，也就是README文件.官方建议自己编译，不建议从第三方库中直接安装。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer。</p>
+<h4 id="编译之前"><a href="#编译之前" class="headerlink" title="编译之前"></a>编译之前</h4><p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在<a href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="external">官方网站</a>获得.</p>
+<p>Source Code没什么好说的，选择最新的就行。<br>Binary Codec Packages，需要根据本机情况选择：    </p>
 <blockquote>
-<p>设置-&gt;系统-&gt;关于<br><a id="more"></a></p>
-<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>之后需要安装适用于Linux的windows子系统。<br>1.以管理员运行Windows PowerShell,输入以下内容回车<br>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</p>
+<p>如果是x86，就选择Linux x86</p>
+<p>x86_64就选择Linux AMD64</p>
 </blockquote>
-<p>2.重新启动Windows</p>
-<p>之后打开开发者人员模式。方法如下：</p>
+<p>skins随便选一个就好。没什么要推荐的：D<br>把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！<br>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。<br><a id="more"></a></p>
+<h4 id="安装Binary-Codec-Packages"><a href="#安装Binary-Codec-Packages" class="headerlink" title="安装Binary Codec Packages"></a>安装Binary Codec Packages</h4><p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/</p>
+<h4 id="配置MPlayer"><a href="#配置MPlayer" class="headerlink" title="配置MPlayer"></a>配置MPlayer</h4><p>首先Mplayer会检测所需的硬件环境，在终端中运行</p>
 <blockquote>
-<p>设置-&gt;更新和安全-&gt;针对开发人员</p>
+<p>./configure</p>
 </blockquote>
-<p>开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。<br>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。</p>
-<h6 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h6><p>打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。</p>
-<h3 id="体验结论"><a href="#体验结论" class="headerlink" title="体验结论"></a>体验结论</h3><p>这个Windows内置的Linux就是将Linux的系统调用实时的转换成Windows的系统调用，就像是Linux上的Wine的反向技术。Wine可以将Windows上的应用放到Linux上运行，<br>这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine开源，微软也毫无办法。</p>
-<p>不过Windows内置的Linux感觉并不自由，内置的文件不能用Windows的工具来创建或修改。否则可能会出现文件损坏导致Linux系统无法使用。因此，如果是Linux的初学者，<br>用这个还不错，但是要当作开发环境，那就算了吧。</p>
-<p>安装指南：<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</a><br>详情链接：<a href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/" target="_blank" rel="external">https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/</a></p>
+<p>来使用默认的选项配置MPlayer。如果想要图形界面，需要运行</p>
+<blockquote>
+<p>./configure –enable-gui</p>
+</blockquote>
+<p>如果有些东西不能用，尝试输入</p>
+<blockquote>
+<p>./configure –help</p>
+</blockquote>
+<p>来查看可用的选项并选择你想要的功能。</p>
+<h4 id="编译MPlayer"><a href="#编译MPlayer" class="headerlink" title="编译MPlayer"></a>编译MPlayer</h4><p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：</p>
+<blockquote>
+<p>make</p>
+</blockquote>
+<p>安装MPlayer</p>
+<blockquote>
+<p>make install</p>
+</blockquote>
+<p>然后就等着就行了。</p>
+<h4 id="安装图形界面的皮肤"><a href="#安装图形界面的皮肤" class="headerlink" title="安装图形界面的皮肤"></a>安装图形界面的皮肤</h4><p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。</p>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入mplayer <moviefile>或gmplayer <moviefile>来打开一个视频。<br>至此，MPlayer就安装完毕了，Enjoy!</moviefile></moviefile></p>
 
       
     </div>
@@ -376,9 +392,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/MPlayer/" rel="tag"># MPlayer</a>
           
-            <a href="/tags/Window/" rel="tag"># Window</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -391,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/20/Archlinux图形界面的配置和安装/" rel="next" title="ArchLinux图形界面的配置和安装">
-                <i class="fa fa-chevron-left"></i> ArchLinux图形界面的配置和安装
+              <a href="/2017/10/20/一个梦/" rel="next" title="一个梦">
+                <i class="fa fa-chevron-left"></i> 一个梦
               </a>
             
           </div>
@@ -400,10 +416,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/20/一个梦/" rel="prev" title="一个梦">
-                一个梦 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -537,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程"><span class="nav-number">2.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#卸载"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">卸载</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体验结论"><span class="nav-number">3.</span> <span class="nav-text">体验结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译之前"><span class="nav-number">1.1.</span> <span class="nav-text">编译之前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Binary-Codec-Packages"><span class="nav-number">1.2.</span> <span class="nav-text">安装Binary Codec Packages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置MPlayer"><span class="nav-number">1.3.</span> <span class="nav-text">配置MPlayer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译MPlayer"><span class="nav-number">1.4.</span> <span class="nav-text">编译MPlayer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装图形界面的皮肤"><span class="nav-number">1.5.</span> <span class="nav-text">安装图形界面的皮肤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">2.</span> <span class="nav-text">结尾</span></a></li></ol></div>
             
 
           </div>
