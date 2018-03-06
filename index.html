@@ -370,9 +370,21 @@
 <p><em>国内推荐腾讯DNSpod公共DNS：119.29.29.29</em></p>
 <ol>
 <li><p>如果是dhcpcd，可以在<code>/etc/dhcpcd.conf</code>中加入如下内容：</p>
-<figure class="highlight plain"><figcaption><span>resolv.conf ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2. 如果是netctl，就不要使用`DNS*`。</div><div class="line">3. 如果是NetworkManager，就编辑`/etc/NetworkManager/NetworkManager.conf`并在`[main]`段加入如下内容：</div><div class="line">``` dns=none</div></pre></td></tr></table></figure>
+<blockquote>
+<p>nohook resolv.conf</p>
+</blockquote>
 </li>
-<li><p>通用方法：对<code>/etc/dhcpcd.conf</code>进行写保护，如下所示：<br><code>chattr +i /etc/resolv.conf</code></p>
+<li><p>如果是netctl，就不要使用<code>DNS*</code>。</p>
+</li>
+<li><p>如果是NetworkManager，就编辑<code>/etc/NetworkManager/NetworkManager.conf</code>并在<code>[main]</code>段加入如下内容：</p>
+<blockquote>
+<p>dns=none</p>
+</blockquote>
+</li>
+<li><p>通用方法：对<code>/etc/dhcpcd.conf</code>进行写保护，如下所示：</p>
+<blockquote>
+<p>chattr +i /etc/resolv.conf</p>
+</blockquote>
 </li>
 </ol>
 <blockquote>
