@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="当使用dhcpcd, netctl, NetworkManager等工具连接网络时，这些都会覆盖/etc/resolv.conf文件，从而修改了DNS。就国内而言，运营商一般都会提供自己的DNS服务器。然而国内DNS污染严重，会经常性的植入广告，因此我们就不得不采取一些措施来防止DNS被修改。 国内推荐腾讯DNSpod公共DNS：119.29.29.29  如果是dhcpcd，可以在/etc/dh">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T06:00:42.504Z">
+<meta property="og:updated_time" content="2018-03-06T06:06:31.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="保护DNS设置">
 <meta name="twitter:description" content="当使用dhcpcd, netctl, NetworkManager等工具连接网络时，这些都会覆盖/etc/resolv.conf文件，从而修改了DNS。就国内而言，运营商一般都会提供自己的DNS服务器。然而国内DNS污染严重，会经常性的植入广告，因此我们就不得不采取一些措施来防止DNS被修改。 国内推荐腾讯DNSpod公共DNS：119.29.29.29  如果是dhcpcd，可以在/etc/dh">
@@ -377,6 +377,9 @@
 <li><p>通用方法：对<code>/etc/dhcpcd.conf</code>进行写保护，如下所示：<br><code>chattr +i /etc/resolv.conf</code></p>
 </li>
 </ol>
+<blockquote>
+<p>来源参考：<a href="https://wiki.archlinux.org/index.php/Resolv.conf#Preserve_DNS_settings" target="_blank" rel="external">https://wiki.archlinux.org/index.php/Resolv.conf#Preserve_DNS_settings</a></p>
+</blockquote>
 
       
     </div>
