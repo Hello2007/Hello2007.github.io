@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="前言本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。 编译之前编译之前需要准备一些东西，Sourc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-14T05:45:43.447Z">
+<meta property="og:updated_time" content="2018-03-10T11:21:15.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下MPlayer编译教程">
 <meta name="twitter:description" content="前言本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。 编译之前编译之前需要准备一些东西，Sourc">
@@ -368,16 +368,18 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。</p>
-<h4 id="编译之前"><a href="#编译之前" class="headerlink" title="编译之前"></a>编译之前</h4><p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在<a href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="external">官方网站</a>获得.</p>
-<p>Source Code没什么好说的，选择最新的就行。<br>Binary Codec Packages，需要根据本机情况选择：    </p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本教程基本来自官方文档，我自己也权当做个记录(虽然之后我也换了VLC)，如果喜欢定制的话，选这个还是没错的.建议有基础的还是去看官方.官方建议自己编译，不建议从第三方库中直接安装(虽然直接装也没问题)。本教程只讨论Linux平台下，Windows如无特殊需求，不需要Mplayer(估计PotPlayer一统江湖吧)。本文若有错误疏漏之处，还请告知。</p>
+<h2 id="编译之前"><a href="#编译之前" class="headerlink" title="编译之前"></a>编译之前</h2><p>编译之前需要准备一些东西，Source Code,Binary Codec Packages,Skins。这些都可以在<a href="http://www.mplayerhq.hu/design7/dload.html" target="_blank" rel="external">官方网站</a>获得.</p>
+<p>Source Code没什么好说的，选择最新的就行。Binary Codec Packages，需要根据本机情况选择。</p>
 <blockquote>
 <p>如果是x86，就选择Linux x86</p>
 <p>x86_64就选择Linux AMD64</p>
 </blockquote>
-<p>skins随便选一个就好。没什么要推荐的：D<br>把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！<br>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。<br><a id="more"></a></p>
-<h4 id="安装Binary-Codec-Packages"><a href="#安装Binary-Codec-Packages" class="headerlink" title="安装Binary Codec Packages"></a>安装Binary Codec Packages</h4><p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/</p>
-<h4 id="配置MPlayer"><a href="#配置MPlayer" class="headerlink" title="配置MPlayer"></a>配置MPlayer</h4><p>首先Mplayer会检测所需的硬件环境，在终端中运行</p>
+<p>skins随便选一个就好。没什么要推荐的：D。把这些东西随便放在你想放置的地方。分别解压缩，然后，就准备开始吧！</p>
+<p>提示：如无特殊说明，下面一切操作皆在MPlayer目录下进行。</p>
+<a id="more"></a>
+<h2 id="安装Binary-Codec-Packages"><a href="#安装Binary-Codec-Packages" class="headerlink" title="安装Binary Codec Packages"></a>安装Binary Codec Packages</h2><p>把Binary Codec Packages放到Mplayer能找到的地方，默认的目录是/usr/local/lib/codecs/</p>
+<h2 id="配置MPlayer"><a href="#配置MPlayer" class="headerlink" title="配置MPlayer"></a>配置MPlayer</h2><p>首先Mplayer会检测所需的硬件环境，在终端中运行</p>
 <blockquote>
 <p>./configure</p>
 </blockquote>
@@ -390,7 +392,7 @@
 <p>./configure –help</p>
 </blockquote>
 <p>来查看可用的选项并选择你想要的功能。</p>
-<h4 id="编译MPlayer"><a href="#编译MPlayer" class="headerlink" title="编译MPlayer"></a>编译MPlayer</h4><p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：</p>
+<h2 id="编译MPlayer"><a href="#编译MPlayer" class="headerlink" title="编译MPlayer"></a>编译MPlayer</h2><p>如果上面一切顺利，下面就可以开始编译了。在终端中输入：</p>
 <blockquote>
 <p>make</p>
 </blockquote>
@@ -399,8 +401,9 @@
 <p>make install</p>
 </blockquote>
 <p>然后就等着就行了。</p>
-<h4 id="安装图形界面的皮肤"><a href="#安装图形界面的皮肤" class="headerlink" title="安装图形界面的皮肤"></a>安装图形界面的皮肤</h4><p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。</p>
-<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入mplayer <moviefile>或gmplayer <moviefile>来打开一个视频。<br>至此，MPlayer就安装完毕了，Enjoy!</moviefile></moviefile></p>
+<h2 id="安装图形界面的皮肤"><a href="#安装图形界面的皮肤" class="headerlink" title="安装图形界面的皮肤"></a>安装图形界面的皮肤</h2><p>将你之前解压完的skins得到的文件夹改名为default，并移动到/usr/local/share/mplayer/skins/目录中。MPlayer将会自动启用该皮肤。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>一切顺利的话，它会在菜单中创建一个MPlayer，你可以直接双击视频来打开，或者在终端输入<code>mplayer &lt;moviefile&gt;</code>或<code>gmplayer &lt;moviefile&gt;</code>来打开一个视频。</p>
+<p>至此，MPlayer就安装完毕了，Enjoy!</p>
 
       
     </div>
@@ -526,7 +529,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -548,7 +551,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -618,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译之前"><span class="nav-number">1.1.</span> <span class="nav-text">编译之前</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Binary-Codec-Packages"><span class="nav-number">1.2.</span> <span class="nav-text">安装Binary Codec Packages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置MPlayer"><span class="nav-number">1.3.</span> <span class="nav-text">配置MPlayer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译MPlayer"><span class="nav-number">1.4.</span> <span class="nav-text">编译MPlayer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装图形界面的皮肤"><span class="nav-number">1.5.</span> <span class="nav-text">安装图形界面的皮肤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">2.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译之前"><span class="nav-number">1.1.</span> <span class="nav-text">编译之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Binary-Codec-Packages"><span class="nav-number">1.2.</span> <span class="nav-text">安装Binary Codec Packages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置MPlayer"><span class="nav-number">1.3.</span> <span class="nav-text">配置MPlayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译MPlayer"><span class="nav-number">1.4.</span> <span class="nav-text">编译MPlayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装图形界面的皮肤"><span class="nav-number">1.5.</span> <span class="nav-text">安装图形界面的皮肤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">1.6.</span> <span class="nav-text">结尾</span></a></li></ol></li></ol></div>
             
 
           </div>

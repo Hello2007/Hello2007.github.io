@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="前言主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10… 体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)既然如此，那果断要来体验一把！ 教程根据官方的Guide，首先要查看系统的OS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-09T15:50:44.858Z">
+<meta property="og:updated_time" content="2018-03-10T11:29:01.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win10内置Linux子系统初体验">
 <meta name="twitter:description" content="前言主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10… 体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)既然如此，那果断要来体验一把！ 教程根据官方的Guide，首先要查看系统的OS">
@@ -368,23 +368,30 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10…</p>
-<p>体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)<br>既然如此，那果断要来体验一把！</p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><p>根据官方的<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">Guide</a>，首先要查看系统的OS版本号和系统类型。<br>系统类型必须是64位操作系统以及OS版本号要在1607+。<br><a id="more"></a><br>查看方法：</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>主力系统之前一直用着Win7，最近也开始感觉有点审美疲劳。一直考虑是换成Win10还是Ubuntu，考虑再三还是选择了Win10…</p>
+<p>体验了Win10半个月后，感觉系统过于臃肿。今天忽然发现Win10还有个beta项目————适用于Linux的Windows子系统。后来查了下才知道早在今年三月份就有了…(lll￢ω￢)既然如此，那果断要来体验一把！</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>根据官方的<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">Guide</a>，首先要查看系统的OS版本号和系统类型。系统类型必须是64位操作系统以及OS版本号要在1607+.</p>
+<a id="more"></a>
+<p>查看方法：</p>
 <blockquote>
 <p>设置-&gt;系统-&gt;关于</p>
-<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>之后需要安装适用于Linux的windows子系统。<br>1.以管理员运行Windows PowerShell,输入以下内容回车<br>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>之后需要安装适用于Linux的windows子系统。</p>
+<p>1.以管理员运行Windows PowerShell,输入以下内容回车</p>
+<blockquote>
+<p>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</p>
 </blockquote>
 <p>2.重新启动Windows</p>
 <p>之后打开开发者人员模式。方法如下：</p>
 <blockquote>
 <p>设置-&gt;更新和安全-&gt;针对开发人员</p>
 </blockquote>
-<p>开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。<br>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。</p>
-<h6 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h6><p>打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。</p>
-<h3 id="体验结论"><a href="#体验结论" class="headerlink" title="体验结论"></a>体验结论</h3><p>这个Windows内置的Linux就是将Linux的系统调用实时的转换成Windows的系统调用，就像是Linux上的Wine的反向技术。Wine可以将Windows上的应用放到Linux上运行，<br>这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine开源，微软也毫无办法。</p>
-<p>不过Windows内置的Linux感觉并不自由，内置的文件不能用Windows的工具来创建或修改。否则可能会出现文件损坏导致Linux系统无法使用。因此，如果是Linux的初学者，<br>用这个还不错，但是要当作开发环境，那就算了吧。</p>
-<p>安装指南：<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</a><br>详情链接：<a href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/" target="_blank" rel="external">https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/</a></p>
+<p>开启后，打开 命令提示符，输入 bash，会提示下载Ubuntu，输入 Y 回车即可。</p>
+<p>提示：如果国内下载速度过慢或根本无法下载，需要自备梯子。</p>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>打开命令提示符，输入 lxrun /uninstall /full，然后根据提示输入 Y 即可开始卸载。</p>
+<h2 id="体验结论"><a href="#体验结论" class="headerlink" title="体验结论"></a>体验结论</h2><p>这个Windows内置的Linux就是将Linux的系统调用实时的转换成Windows的系统调用，就像是Linux上的Wine的反向技术。Wine可以将Windows上的应用放到Linux上运行，这势必会降低微软的市场占有率，感到危险，微软有所动作也是理所当然。wine开源，微软也毫无办法。</p>
+<p>不过Windows内置的Linux感觉并不自由，内置的文件不能用Windows的工具来创建或修改。否则可能会出现文件损坏导致Linux系统无法使用。因此，如果是Linux的初学者，用这个还不错，但是要当作开发环境，那就算了吧。</p>
+<p>&gt;<br>官方安装指南：<a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank" rel="external">https://msdn.microsoft.com/en-us/commandline/wsl/install_guide</a><br>详情链接：<a href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/" target="_blank" rel="external">https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/</a></p>
 
       
     </div>
@@ -417,7 +424,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/16/一日囚/" rel="next" title="一日囚">
+              <a href="/2017/07/16/[转载]一日囚/" rel="next" title="一日囚">
                 <i class="fa fa-chevron-left"></i> 一日囚
               </a>
             
@@ -510,7 +517,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -602,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程"><span class="nav-number">2.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#卸载"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">卸载</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#体验结论"><span class="nav-number">3.</span> <span class="nav-text">体验结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程"><span class="nav-number">1.1.</span> <span class="nav-text">教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载"><span class="nav-number">1.1.2.</span> <span class="nav-text">卸载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体验结论"><span class="nav-number">1.2.</span> <span class="nav-text">体验结论</span></a></li></ol></li></ol></div>
             
 
           </div>

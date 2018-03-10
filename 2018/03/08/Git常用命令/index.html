@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="相关名词1234Workspace           #工作区Index / Stage       #暂存区Repository          #仓库区（或本地仓库）Remote              #远程仓 新建代码库12345678# 在当前目录新建一个Git代码库git init# 新建一个目录，将其初始化为Git代码库git init [project-name]# 下载一个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T09:35:46.222Z">
+<meta property="og:updated_time" content="2018-03-10T11:16:30.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
 <meta name="twitter:description" content="相关名词1234Workspace           #工作区Index / Stage       #暂存区Repository          #仓库区（或本地仓库）Remote              #远程仓 新建代码库12345678# 在当前目录新建一个Git代码库git init# 新建一个目录，将其初始化为Git代码库git init [project-name]# 下载一个">
@@ -380,12 +380,12 @@
 <h1 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"># 恢复暂存区的指定文件到工作区</div><div class="line">git checkout [file]</div><div class="line"></div><div class="line"># 恢复某个commit的指定文件到暂存区和工作区</div><div class="line">git checkout [commit] [file]</div><div class="line"></div><div class="line"># 恢复暂存区的所有文件到工作区</div><div class="line">git checkout .</div><div class="line"></div><div class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</div><div class="line">git reset [file]</div><div class="line"></div><div class="line"># 重置暂存区与工作区，与上一次commit保持一致</div><div class="line">git reset --hard</div><div class="line"></div><div class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</div><div class="line">git reset [commit]</div><div class="line"></div><div class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</div><div class="line">git reset --hard [commit]</div><div class="line"></div><div class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</div><div class="line">git reset --keep [commit]</div><div class="line"></div><div class="line"># 新建一个commit，用来撤销指定commit</div><div class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</div><div class="line">git revert [commit]</div><div class="line"></div><div class="line"># 暂时将未提交的变化移除，稍后再移入</div><div class="line">git stash</div><div class="line">git stash pop</div></pre></td></tr></table></figure>
 <blockquote>
 <p>来源：<a href="http://objcoding.com/2017/08/12/Git/" target="_blank" rel="external">http://objcoding.com/2017/08/12/Git/</a></p>
+</blockquote>
 <hr>
 <h1 id="本人曾遇到的问题"><a href="#本人曾遇到的问题" class="headerlink" title="本人曾遇到的问题"></a>本人曾遇到的问题</h1><ol>
 <li>Q:fatal: remote origin already exists.<br>A:<code>git remote -v</code>查看一下，然后<code>git remote rm origin</code>删除已存在的远程库<code>remote</code>，重新<code>git remote add...</code>.或者<code>git remote add [换个名字]...</code>.</li>
 <li>Q:fatal: refusing to merge unrelated histories<br>A:<code>git pull origin master ----allow-unrelated-histories</code></li>
 </ol>
-</blockquote>
 
       
     </div>
@@ -425,6 +425,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/10/Recommend two sites/" rel="prev" title="Recommend two websites">
+                Recommend two websites <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -505,7 +509,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -527,7 +531,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
