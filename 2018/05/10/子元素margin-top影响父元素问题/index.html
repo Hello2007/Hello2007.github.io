@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。 我的HTML嵌套关系如下： 12345&amp;lt;header id=&quot;site-head&quot;&amp;gt;    &amp;lt;a id=&quot;blog-logo&quot;&amp;gt;        &amp;lt;div class=&quot;logo&quot; style=&quot;background:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-10T02:36:13.737Z">
+<meta property="og:updated_time" content="2018-05-10T07:58:37.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="子元素margin-top影响父元素问题">
 <meta name="twitter:description" content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。 我的HTML嵌套关系如下： 12345&amp;lt;header id=&quot;site-head&quot;&amp;gt;    &amp;lt;a id=&quot;blog-logo&quot;&amp;gt;        &amp;lt;div class=&quot;logo&quot; style=&quot;background:">
@@ -387,10 +387,9 @@
 <li>父级或子元素使用浮动或者绝对定位absolute浮动或绝对定位不参与margin的折叠</li>
 <li>父级overflow:hidden;</li>
 <li>父级设置padding（破坏非空白的折叠条件）<strong>//对于这条表示怀疑，我之前设置的padding并没有起到作用(</strong></li>
-<li><p>父级设置border</p>
-<p>最终我用的<code>父级overflow:hidden;</code>完美解决问题！</p>
-</li>
+<li>父级设置border</li>
 </ol>
+<p>最终我用的<code>父级overflow:hidden;</code>完美解决问题！</p>
 
       
     </div>
