@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。 我的HTML嵌套关系如下： 12345&amp;lt;header id=&quot;site-head&quot;&amp;gt;    &amp;lt;a id=&quot;blog-logo&quot;&amp;gt;        &amp;lt;div class=&quot;logo&quot; style=&quot;background:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-10T07:58:37.904Z">
+<meta property="og:updated_time" content="2018-05-10T15:13:48.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="子元素margin-top影响父元素问题">
 <meta name="twitter:description" content="今天遇到了一个问题，是关于前端CSS子元素的margin-top会影响父元素的问题。搞了好长时间也不知道怎么回事，最后终于解决了，写出来权当做个记录。 我的HTML嵌套关系如下： 12345&amp;lt;header id=&quot;site-head&quot;&amp;gt;    &amp;lt;a id=&quot;blog-logo&quot;&amp;gt;        &amp;lt;div class=&quot;logo&quot; style=&quot;background:">
@@ -374,12 +374,13 @@
 <a id="more"></a>
 <p>父元素CSS：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#site-head</span>&#123;</div><div class="line">    <span class="attribute">max-width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/resources/images/header.jpg"</span>);</div><div class="line">    <span class="attribute">background-size</span>: cover;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>子元素CSS：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#blog-logo</span> &#123;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">max-width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto <span class="number">0</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>子元素CSS：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#blog-logo</span> &#123;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">max-width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">50px</span> auto <span class="number">0</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>当子元素中margin-top为50px时，神奇的一幕发生了，子元素并没有相对于父元素向下移动50px，而是连带着父元素一起向下移动了50px。</p>
 <p>在Chrome的Developer tools中查看时，看到就连body都向下移动了50px！之后尝试在父元素中设置margin或body中设置都没有用，在父元素中设置padding也没有效果。</p>
 <p>之后搜索到的css2.1盒模型中规定的内容如下：</p>
 <blockquote>
-<p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin. </p>
+<p>In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding or border areas or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.</p>
 </blockquote>
 <p>所有毗邻的两个或更多盒元素的margin将会合并为一个margin共享之。毗邻的定义为：同级或者嵌套的盒元素，并且它们之间没有非空内容、Padding或Border分隔。因为嵌套也属于毗邻，所以在样式表中优先级更高的。因此子元素中的margin覆盖了父元素的margin。</p>
 <p>之后找到的解决方法如下：</p>
@@ -420,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/07/国产IM毒瘤/" rel="next" title="国产IM毒瘤">
-                <i class="fa fa-chevron-left"></i> 国产IM毒瘤
+              <a href="/2018/05/07/腾讯做不出好产品/" rel="next" title="腾讯做不出好产品">
+                <i class="fa fa-chevron-left"></i> 腾讯做不出好产品
               </a>
             
           </div>
