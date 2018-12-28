@@ -102,11 +102,11 @@
 <meta name="keywords" content="Spring学习之路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learn Spring Framework">
-<meta property="og:url" content="https://wanmei.ml/2018/03/18/LSF_1/index.html">
+<meta property="og:url" content="https://wanmei.ml/2018/03/18/Learn Spring Framework/index.html">
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="前言Recently,I was learning the Spring Framework. At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I ha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T15:49:51.357Z">
+<meta property="og:updated_time" content="2018-12-28T15:48:38.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learn Spring Framework">
 <meta name="twitter:description" content="前言Recently,I was learning the Spring Framework. At first, I learn it from Spring official website of the guide. When I completed the first few guides, I find that I didn’t even understand why. So I ha">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="https://wanmei.ml/2018/03/18/LSF_1/"/>
+  <link rel="canonical" href="https://wanmei.ml/2018/03/18/Learn Spring Framework/"/>
 
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wanmei.ml/2018/03/18/LSF_1/">
+    <link itemprop="mainEntityOfPage" href="https://wanmei.ml/2018/03/18/Learn Spring Framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sherry">
@@ -417,7 +417,9 @@
 <p>As a Spring Developer, you want to learn why things work the way they work. The syntax, the annotations, the examples will become easier to understand that way. A pattern will emerge sooner or later from the initial randomness.</p>
 <p>It is worth the effort to go through this randomness. A good foundation is the core of any learning. Find your own randomness.</p>
 </blockquote>
-<h3 id="Building-a-RESTful-Web-Service"><a href="#Building-a-RESTful-Web-Service" class="headerlink" title="Building a RESTful Web Service"></a>Building a RESTful Web Service</h3><p><strong>UPDATE:</strong> 初学的时候不懂，感觉有点奇怪，原来这是Spring boot里的内容 =。=，就这样吧</p>
+<h3 id="Building-a-RESTful-Web-Service"><a href="#Building-a-RESTful-Web-Service" class="headerlink" title="Building a RESTful Web Service"></a>Building a RESTful Web Service</h3><p><strong>UPDATE:</strong> 初学的时候不懂，感觉有点奇怪，原来这是Spring boot里的内容 =。=</p>
+<p>UPDATE(2018.12.28)：现在再回过头来看，纯粹达到会使用的话也没那么复杂，真是难了不会，会了不难，原本想要做成一个学习系列，用来督促学习的，现在看来当初的计划也失败了，就这样结束吧。</p>
+<p>哦对了，下文基本上是官方文档的英译中。嗯，就这样吧。</p>
 <p>源文档：<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="external">https://spring.io/guides/gs/rest-service/</a></p>
 <p>部分代码摘录如下：</p>
 <h4 id="src-main-java-hello-Greeting-java"><a href="#src-main-java-hello-Greeting-java" class="headerlink" title="src/main/java/hello/Greeting.java"></a>src/main/java/hello/Greeting.java</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> hello;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">long</span> id;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String content;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Greeting</span><span class="params">(<span class="keyword">long</span> id, String content)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.id = id;</div><div class="line">        <span class="keyword">this</span>.content = content;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> content;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
