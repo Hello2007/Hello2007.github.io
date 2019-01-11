@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="清风楼">
 <meta property="og:description" content="前言前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。 事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-16T04:18:32.503Z">
+<meta property="og:updated_time" content="2018-12-28T16:41:12.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一道笔试题">
 <meta name="twitter:description" content="前言前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。 事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。">
@@ -370,8 +370,8 @@
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>前段时间参加了某头条的笔试，出的五道编程题都跟算法有关。其中有道题大致意思是这样的：<strong>输入一个表达式，输出由‘6’这个字符组成的运算结果的图形。也就是说，假设输入5*6+6,就需要输出由‘6’组成的结果为“36”的图形。</strong></p>
 <p>事实上，这道题考得是“表达式求值”。关键点就在于需要将这个表达式拆开并按照加减乘除和括号之间的优先级算法，首先需要算出具体的答案，然后取余跟事先画好的0-9的图形进行匹配即可。可惜我当时一直在想怎么用循环来表达出这些毫无规律的“数字图形”，没意识到这就是&lt;数据结构&gt;上曾经学过的表达式求值:(</p>
-<p>一般来说，表达式求值有“中缀表示法”和“后缀表示法”(又称“逆波兰表示法”)两种。适合人类阅读的便是“中缀表示法”，例如：5+6*7 但“后缀表示法”更适合计算机来计算，因为无需判断操作符号的优先级，例如：567*+</p>
 <a id="more"></a>
+<p>一般来说，表达式求值有“中缀表示法”和“后缀表示法”(又称“逆波兰表示法”)两种。适合人类阅读的便是“中缀表示法”，例如：5+6*7 但“后缀表示法”更适合计算机来计算，因为无需判断操作符号的优先级，例如：567*+</p>
 <p>虽然“逆波兰表示法”更容易编程，然而事实上，一般都会输入“中缀表达式”，因此还要转化为“逆波兰表示法”，所以两种算法个人感觉没有哪个更为简单。</p>
 <p>要判断运算符优先级，首先要将数字和运算符分两边存储，然后看第一个运算符和第二个运算符之间的大小，如果第一个比第二个大或者相等就可以先算第一个，反之则要先计算第二个，很符合先进先出的规则。这样就很自然的想到用到栈来表示。</p>
 <h2 id="中缀表达式"><a href="#中缀表达式" class="headerlink" title="中缀表达式"></a>中缀表达式</h2><p>以下是“中缀表达式”在栈中执行过程，假设表达式为：<strong>5+6*7/8</strong></p>
@@ -842,7 +842,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -966,7 +966,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
